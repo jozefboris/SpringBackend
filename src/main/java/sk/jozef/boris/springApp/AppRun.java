@@ -15,7 +15,7 @@ public class AppRun {
     HelloWordService helloWordService;
 
     @Autowired
-    public AppRun(@Qualifier("englishHelloWorld") HelloWordService helloWordService) {
+    public AppRun(@Qualifier("slovakHelloWorld") HelloWordService helloWordService) {
         this.helloWordService = helloWordService;
     }
 
