@@ -8,6 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import sk.jozef.boris.springApp.Services.HelloWordService;
 import sk.jozef.boris.springApp.Services.PrintService;
+import sk.jozef.boris.springApp.Services.RestApiSevice;
 
 @SpringBootApplication
 @ImportResource("classpath:bean-configurator.xml")
@@ -17,8 +18,8 @@ public class SpringAppApplication {
 		ConfigurableApplicationContext context =SpringApplication.run(SpringAppApplication.class, args);
 		/*String appRun =context.getBean(BibleVerses.class).getVers();
 		System.out.println(appRun);*/
-		context.getBean(PrintService.class).print();
-
+		context.getBean(RestApiSevice.class).getTodo(1l);
+		System.out.println(context.getBean(RestApiSevice.class).getTodo(1l));
 
 	}
 

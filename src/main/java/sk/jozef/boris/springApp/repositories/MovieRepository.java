@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import sk.jozef.boris.springApp.model.Movie;
 
 public interface MovieRepository extends JpaRepository<Movie, Long> {
+
 }
