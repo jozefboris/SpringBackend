@@ -20,9 +20,9 @@ public class MovieRestController {
     @GetMapping("/movies")
     List<MovieDto> getMovies(@RequestParam(required = false) String name){
         if (name != null && !name.isEmpty()) {
-            return movieService.getAllMovies();
+            return movieService.findMoveByName(name);
         }
-        return movieService.findMoveByName(name);
+        return movieService.getAllMovies();
 
     }
 
@@ -33,7 +33,7 @@ public class MovieRestController {
 
     }
 
-    @PostMapping("/movies")
+    @PostMapping("/movies" )
     MovieDto addMovie(@RequestBody MovieDto movieDto){
         return movieService.addMovie(movieDto);
     }
