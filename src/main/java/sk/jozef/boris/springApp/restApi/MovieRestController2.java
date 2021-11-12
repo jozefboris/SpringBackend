@@ -10,11 +10,11 @@ import sk.jozef.boris.springApp.repositories.MovieRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-public class MovieRestController {
+@RequestMapping("/apip")
+public class MovieRestController2 {
     MovieRepository movieRepository;
 
-    public MovieRestController(MovieRepository movieRepository) {
+    public MovieRestController2(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
 

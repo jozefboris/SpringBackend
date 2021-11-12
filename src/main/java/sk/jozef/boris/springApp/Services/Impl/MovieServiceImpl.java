@@ -43,4 +43,26 @@ public class MovieServiceImpl implements MovieService {
     public List<MovieDto> findMoveByName(String name) {
         return movieRepository.findByName(name).stream().map(movieMapper::movieToMovieDto).collect(Collectors.toList());
     }
+
+    @Override
+    public MovieDto addMovie(MovieDto movieDto) {
+        return movieMapper.movieToMovieDto(movieRepository.save(movieMapper.moveDtoToMovie(movieDto)));
+    }
+
+    @Override
+    public void deleteMovie(Long id) {
+        movieRepository.deleteById(id);
+    }
+
+    @Override
+    public MovieDto updateMovie(MovieDto movieDto, Long id) {
+        return movieMapper.movieToMovieDto( movieRepository.findById(id).map(movie -> {
+            movie.setName(movieDto.getName());
+            movie.setDirectors(movieDto.getDirectorsOfTheMovie());
+            return movieRepository.save(movie);
+        }).orElseGet(() ->{
+            return movieRepository.save(movieMapper.moveDtoToMovie(movieDto));
+        }));
+
+    }
 }

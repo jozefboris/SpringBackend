@@ -18,8 +18,8 @@ public class SpringAppApplication {
 		ConfigurableApplicationContext context =SpringApplication.run(SpringAppApplication.class, args);
 		/*String appRun =context.getBean(BibleVerses.class).getVers();
 		System.out.println(appRun);*/
-		context.getBean(RestApiSevice.class).getTodo(1l);
-		System.out.println(context.getBean(RestApiSevice.class).getTodo(1l));
+		/*context.getBean(RestApiSevice.class).getTodo(1l);
+		System.out.println(context.getBean(RestApiSevice.class).getTodo(1l));*/
 
 	}
 
